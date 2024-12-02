@@ -1,9 +1,9 @@
-from collections import defaultdict
-
 input = open("input.txt", "r")
 # input = open("test.txt", "r")
 
 arr1, arr2 = [],[]
+
+from collections import defaultdict
 mp1, mp2 = defaultdict(int), defaultdict(int)
 
 for row in input:
