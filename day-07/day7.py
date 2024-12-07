@@ -37,19 +37,18 @@ def part2(path):
     return ans
 
 def part2_helper(total, arr):
-    curr_set = set()
-    curr_set.add(arr[0])
+    curr_arr=[arr[0]]
 
     for i in arr[1:]:
-        new_set = set()
-        for v in curr_set:
+        new_arr = []
+        for v in curr_arr:
             new_string = str(v)+str(i)
-            new_set.add(int(new_string))
-            new_set.add(v*i)
-            new_set.add(v+i)
-        curr_set = new_set
+            new_arr.append(int(new_string))
+            new_arr.append(v*i)
+            new_arr.append(v+i)
+        curr_arr = new_arr
     
-    return total in new_set
+    return total in new_arr
 
 if __name__ == "__main__":
     print(part1("input.txt"))
